@@ -7,6 +7,16 @@ import uvicorn
 app = fastapi.FastAPI()
 
 
+@app.get('/')
+def index():
+    return fastapi.responses.RedirectResponse(url='/home')
+
+
+@app.get('/home')
+def home():
+    return {'message': 'Hello!'}
+
+
 @app.get('/api/calculate/{a}/{b}')
 def calculate(a: int, b: int, c: Optional[int] = None):
     value = (a + b)
