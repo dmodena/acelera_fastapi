@@ -11,7 +11,9 @@ app = fastapi.FastAPI()
 def calculate(a: int, b: int, c: Optional[int] = None):
     value = (a + b)
 
-    if c is not None:
+    if c == 0:
+        return fastapi.Response(content='ERROR: c cannot be zero', status_code=400)
+    elif c is not None:
         value /= c
 
     return {'value': value}
