@@ -7,7 +7,7 @@ import uvicorn
 app = fastapi.FastAPI()
 
 
-@app.get('/api/calculate')
+@app.get('/api/calculate/{a}/{b}')
 def calculate(a: int, b: int, c: Optional[int] = None):
     value = (a + b)
 
