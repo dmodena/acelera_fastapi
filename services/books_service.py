@@ -6,6 +6,6 @@ __books = [
 ]
 
 
-def get_books():
+async def get_books():
     # await some resource
     return __books

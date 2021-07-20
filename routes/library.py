@@ -6,6 +6,6 @@ router = fastapi.APIRouter()
 
 
 @router.get('/books')
-def books_get():
-    books = books_service.get_books()
+async def books_get():
+    books = await books_service.get_books()
     return books
