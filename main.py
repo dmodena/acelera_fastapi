@@ -6,7 +6,7 @@ app = fastapi.FastAPI()
 
 
 @app.get('/api/calculate')
-def calculate(a, b):
+def calculate(a: int, b: int):
     value = a + b
     return {'value': value}
 
