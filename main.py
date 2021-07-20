@@ -12,10 +12,8 @@ def calculate(a: int, b: int, c: Optional[int] = None):
     value = (a + b)
 
     if c == 0:
-        return fastapi.Response(
-            content='{"error": "ERROR: c cannot be zero"}',
-            media_type='application/json',
-            status_code=400)
+        return fastapi.responses.JSONResponse(
+            content={'error': 'ERROR: c cannot be zero'}, status_code=400)
     elif c is not None:
         value /= c
 
