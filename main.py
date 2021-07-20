@@ -7,7 +7,8 @@ app = fastapi.FastAPI()
 
 @app.get('/api/calculate')
 def calculate():
-    return 2+2
+    value = 2+2
+    return {'value': value}
 
 
 if __name__ == '__main__':
